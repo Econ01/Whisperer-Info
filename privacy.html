@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Whisperer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <span class="nav-brand">Whisperer</span>
+    <div class="nav-links">
+      <a href="privacy.html" class="active">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </nav>
+
+  <main id="content"><p class="loading">Loading…</p></main>
+
+  <footer>
+    <p>Questions? <a href="mailto:cemcakmak.contact@gmail.com">cemcakmak.contact@gmail.com</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('PrivacyPolicy.md')
+      .then(r => r.text())
+      .then(md => {
+        document.getElementById('content').innerHTML = marked.parse(md);
+      })
+      .catch(() => {
+        document.getElementById('content').innerHTML = '<p>Failed to load document.</p>';
+      });
+  </script>
+</body>
+</html>
