@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service — Whisperer</title>
+  <title>Support — Whisperer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,20 +11,16 @@
     <span class="nav-brand">Whisperer</span>
     <div class="nav-links">
       <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html" class="active">Terms of Service</a>
-      <a href="support.html">Support</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="support.html" class="active">Support</a>
     </div>
   </nav>
 
   <main id="content"><p class="loading">Loading…</p></main>
 
-  <footer>
-    <p>Questions? <a href="mailto:cemcakmak@gmail.com">cemcakmak@gmail.com</a></p>
-  </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    fetch('TermsOfService.md')
+    fetch('Support.md')
       .then(r => r.text())
       .then(md => {
         document.getElementById('content').innerHTML = marked.parse(md);
